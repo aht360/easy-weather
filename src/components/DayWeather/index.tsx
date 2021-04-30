@@ -7,10 +7,11 @@ import { useWeather } from '../../hooks/weather';
 import { FaRegCalendarAlt, FaRegClock, FaWind, FaTemperatureHigh } from 'react-icons/fa';
 const DayWeather: React.FC = () => {
     const { weather } = useWeather();
-
+    console.log(weather)
     return (
         <Container>
             {
+                weather &&
                 Object.keys(weather).length === 0 ?
                 <Loader
                     type="TailSpin"
@@ -20,23 +21,23 @@ const DayWeather: React.FC = () => {
                 />
                 :
                 <ContainerDayWeather>
-                    <h1>{weather.city}</h1>
-                    <span> <FaRegCalendarAlt/> {weather.forecast[0].weekday}, {weather.forecast[0].date}</span>
-                    <span> <FaRegClock/> {weather.time}</span>
-                    <span>{weather.description}</span>
+                    <h1>{weather?.city}</h1>
+                    <span> <FaRegCalendarAlt/> {weather?.forecast[0].weekday}, {weather?.forecast[0].date}</span>
+                    <span> <FaRegClock/> {weather?.time}</span>
+                    <span>{weather?.description}</span>
                     <TemperatureContent>
-                        <h2>{weather.temp}</h2>
+                        <h2>{weather?.temp}</h2>
                         <p>°C</p>
                     </TemperatureContent>
                     <WeatherData>
                         <WeatherVariables>
                             <FaWind size={25} />
-                            <p>{weather.wind_speedy}</p>
+                            <p>{weather?.wind_speedy}</p>
                             <p>Vento</p>
                         </WeatherVariables>
                         <WeatherVariables>
                             <FaTemperatureHigh size={25} />
-                            <p>{weather.humidity}%</p>
+                            <p>{weather?.humidity}%</p>
                             <p>Umidade</p>
                         </WeatherVariables>
                     </WeatherData>

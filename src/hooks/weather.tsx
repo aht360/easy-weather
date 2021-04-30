@@ -44,8 +44,6 @@ const WeatherProvider: React.FC = ({ children }) => {
         const position = localStorage.getItem('@easy-weather:position');
         const weather = localStorage.getItem('@easy-weather:weather');
         
-        
-
         if(position && weather){
             return { position, weather: JSON.parse(weather) }
         }
@@ -54,19 +52,16 @@ const WeatherProvider: React.FC = ({ children }) => {
     });
 
     const getWeather = useCallback( async ( position ) => {
-        
-
         localStorage.setItem('@easy-weather:position', position);
-
         const response = await api.get('weather', { params: {
             format: 'json-cors',
-            key: 'efaea397',
+            key: '78e0fb1d',
             lat: position[0],
             lon: position[1],
             user_ip: 'remote',
             locale: 'pt'
         }});
-
+        console.log(response.data)
         const weatherResponse = response.data.results;
 
         const weather = {

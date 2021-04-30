@@ -35,12 +35,12 @@ const Map: React.FC = () => {
     }
 
     useEffect(() => {
-        navigator.geolocation.getCurrentPosition(position => {
-            const { latitude, longitude } = position.coords;
-            setPosition([latitude, longitude]);
-            getWeather([latitude, longitude])
-        });
-    }, [getWeather])
+        setPosition([-8.0462556, -34.9146644]);
+    }, [])
+
+    useEffect(() => {
+        getWeather(position)
+    }, [position])
 
     return (
         <Container>
