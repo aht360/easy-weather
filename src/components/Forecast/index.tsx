@@ -3,7 +3,7 @@ import React from 'react';
 import { Container, ForecastWeek, ForecastDay, MaxMin } from './styles';
 import Loader from "react-loader-spinner";
 import { useWeather } from '../../hooks/weather';
-import { WiDirectionUp, WiDirectionDown,WiCloudy, WiDayCloudy, WiDaySunny, WiDayThunderstorm, WiFog, WiHail, WiNightClear, WiNightCloudy, WiRaindrops, WiSnow } from 'react-icons/wi';
+import { WiCloudy, WiDayCloudy, WiDaySunny, WiDayThunderstorm, WiFog, WiHail, WiNightClear, WiNightCloudy, WiRaindrops, WiSnow } from 'react-icons/wi';
 import { FiArrowDown, FiArrowUp } from 'react-icons/fi';
 
 
@@ -11,7 +11,6 @@ const Forecast: React.FC = () => {
     const { weather } = useWeather();
     
     const forecast = weather.forecast.slice(1, 8);
-    console.log(weather.forecast[0])
 
     return (
         <Container>

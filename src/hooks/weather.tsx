@@ -61,7 +61,7 @@ const WeatherProvider: React.FC = ({ children }) => {
             user_ip: 'remote',
             locale: 'pt'
         }});
-        console.log(response.data)
+        
         const weatherResponse = response.data.results;
 
         const weather = {
@@ -82,7 +82,7 @@ const WeatherProvider: React.FC = ({ children }) => {
         
 
         localStorage.setItem('@easy-weather:weather', JSON.stringify(weather));
-        console.log(weather)
+        
         setData({ position, weather });
     }, []);
 

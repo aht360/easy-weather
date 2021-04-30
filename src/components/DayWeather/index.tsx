@@ -7,7 +7,7 @@ import { useWeather } from '../../hooks/weather';
 import { FaRegCalendarAlt, FaRegClock, FaWind, FaTemperatureHigh } from 'react-icons/fa';
 const DayWeather: React.FC = () => {
     const { weather } = useWeather();
-    console.log(weather)
+    
     return (
         <Container>
             {

@@ -6,8 +6,6 @@ import Loader from "react-loader-spinner";
 import { useWeather } from '../../hooks/weather';
 
 const Map: React.FC = () => {
-    
-    
     const [position, setPosition] = useState<[number, number]>([0, 0]);
     const { getWeather } = useWeather();
 
@@ -40,7 +38,7 @@ const Map: React.FC = () => {
 
     useEffect(() => {
         getWeather(position)
-    }, [position])
+    }, [position, getWeather])
 
     return (
         <Container>
