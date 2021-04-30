@@ -55,7 +55,7 @@ const WeatherProvider: React.FC = ({ children }) => {
         localStorage.setItem('@easy-weather:position', position);
         const response = await api.get('weather', { params: {
             format: 'json-cors',
-            key: '78e0fb1d',
+            key: '32b87df2',
             lat: position[0],
             lon: position[1],
             user_ip: 'remote',
